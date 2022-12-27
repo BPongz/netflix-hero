@@ -1,0 +1,54 @@
+<div class="nav flex align-items-center justify-content-center">
+  <div class="container flex w-12 align-items-center justify-content-between">
+    <div class="left flex align-items-center gap-5">
+      <p-image src="../../../../assets/img/Netflix.png" height="25"></p-image>
+      <div
+        class="browse flex align-items-center gap-1 sm:flex md:hidden"
+        (click)="browse.toggle($event)"
+      >
+        <i class="pi pi-fw pi-angle-down"></i>
+        <div>Browse</div>
+      </div>
+      <div class="gap-3 md:flex hidden">
+        <div
+          class="navList select-none"
+          *ngFor="let data of navList"
+          [ngClass]="{ activated: data.current }"
+        >
+          {{ data.label }}
+        </div>
+      </div>
+    </div>
+    <div class="right flex align-items-center gap-3">
+      <div class="arrow flex gap-3">
+        <i class="pi pi-fw pi-search text-xl"></i>
+        <i class="pi pi-fw pi-bell text-xl"></i>
+      </div>
+      <div
+        class="flex align-items-center gap-1"
+        (click)="profile.toggle($event)"
+      >
+        <div class="profile w-2rem h-2rem bg-white border-round"></div>
+        <div class="arrow" [ngClass]="{ upside: isClick }">
+          <i class="pi pi-fw pi-angle-down"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<p-menu
+  #profile
+  [popup]="true"
+  [model]="items"
+  appendTo="body"
+  (onShow)="setEnable()"
+  (onHide)="setDisable()"
+>
+</p-menu>
+<p-menu
+  #browse
+  [popup]="true"
+  [model]="navList"
+  appendTo="body"
+  styleClass="browseMenu"
+></p-menu>

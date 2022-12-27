@@ -1,0 +1,62 @@
+.nav {
+    background: #141414;
+    height: 68px;
+    .navList {
+        color: white;
+        font-weight: 300;
+        opacity: 0.9;
+        transition: all 0.4s;
+        font-size: 14px;
+        &:hover {
+            opacity: 0.5;
+            cursor: pointer;
+            transition: all 0.4s;
+        }
+    }
+    .browse {
+        color: white;
+        cursor: pointer;
+    }
+    .activated {
+        pointer-events: none;
+        font-weight: 600;
+    }
+    .profile {
+        background-image: url("../../../../assets/img/wednessday.jpg");
+        background-size: cover;
+    }
+    .right {
+        .arrow {
+            transition: all 0.2s;
+            color: white;
+        }
+        .upside {
+            transition: all 0.2s;
+            transform: rotate(180deg);
+        }
+    }
+}
+
+::ng-deep .p-menu.p-menu-overlay {
+    background: black;
+    margin-top: 1.5rem;
+}
+
+::ng-deep .p-menu .p-menuitem-link:not(.p-disabled) {
+    &:hover {
+        background: black;
+    }
+}
+
+::ng-deep .p-menuitem-text {
+    color: white !important;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+::ng-deep .p-menu .p-menuitem-link {
+    &:focus-visible,
+    &:focus-visible {
+        box-shadow: none;
+    }
+}

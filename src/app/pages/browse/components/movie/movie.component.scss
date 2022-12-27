@@ -1,0 +1,34 @@
+.description {
+    color: white;
+    max-width: 40vw;
+    line-height: 1.3;
+    text-shadow: 0 0 3px black;
+}
+.rate {
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+p-button {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+:host .primary ::ng-deep .p-button {
+    background: white;
+    color: #000;
+    border: none;
+}
+:host .primary ::ng-deep .p-button:hover {
+    filter: brightness(50%);
+}
+:host .secondary ::ng-deep .p-button {
+    background-color: rgba(137, 137, 137, 0.514);
+    color: white;
+    border: none;
+}
+:host .secondary ::ng-deep .p-button:hover {
+    background-color: rgba(137, 137, 137, 0.333);
+}
