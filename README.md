@@ -1,27 +1,15 @@
-# NetflixHero
+# NetflixMirror
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.2.
+A practice project for developing a beautiful UI Website like Netflix using Angular.
+
+## UI
+[![image](https://sv1.picz.in.th/images/2022/12/29/Jgs1FP.md.png)](https://www.picz.in.th/image/Jgs1FP)
 
 ## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+You can run using `yarn start` for a dev server, If you have yarn installed on you system or you can run `ng serve` too. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+> This is not for financial gain; it is for front-end practice.
