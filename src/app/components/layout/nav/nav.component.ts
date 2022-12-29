@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
+import { BrowseComponent } from 'src/app/pages/browse/browse.component';
 
 @Component({
   selector: 'app-nav',
@@ -8,43 +9,48 @@ import { MenuItem } from 'primeng/api';
   styleUrls: ['./nav.component.scss'],
 })
 export class NavComponent implements OnInit {
-  browse = false;
-  tvShows = false;
-  movies = false;
   isClick = false;
   navList = [
     {
       separator: true,
     },
-    { label: 'Home', link: '/', current: true },
+    { label: 'Home', current: true },
     {
       label: 'Top Picks',
-      link: '/toppicks',
+      link: 'top',
+      command: () => {
+        this.scrollToElement('top');
+      },
     },
-    { label: 'Movies', link: '/movies' },
-    { label: 'New & Poppular', link: '/poppular' },
-    { label: 'My List', link: '/list' },
+    {
+      label: 'Movies',
+      link: 'mov',
+      command: () => {
+        this.scrollToElement('mov');
+      },
+    },
+    {
+      label: 'New & Poppular',
+      link: 'pop',
+      command: () => {
+        this.scrollToElement('pop');
+      },
+    },
+    {
+      label: 'My List',
+      link: 'list',
+      command: () => {
+        this.scrollToElement('list');
+      },
+    },
   ];
   items!: MenuItem[];
 
-  constructor(private router: Router) {
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this.browse = false;
-        this.tvShows = false;
-        this.movies = false;
-        if (event.url.includes('browse')) {
-          this.browse = true;
-        }
-        if (event.url.includes('shows')) {
-          this.tvShows = true;
-        }
-        if (event.url.includes('movies')) {
-          this.movies = true;
-        }
-      }
-    });
-  }
+  constructor(
+    private router: Router,
+    private browseComp: BrowseComponent,
+    private route: ActivatedRoute
+  ) {}
   ngOnInit(): void {
     this.items = [
       {
@@ -62,6 +68,9 @@ export class NavComponent implements OnInit {
       },
       {
         label: 'Sign out of Netflix',
+        command: () => {
+          this.openVideo();
+        },
       },
     ];
   }
@@ -71,5 +80,31 @@ export class NavComponent implements OnInit {
   }
   setDisable() {
     this.isClick = false;
+  }
+
+  scrollToElement(elName: any) {
+    console.log(elName);
+    let scrollTo: any;
+    if (elName === 'top')
+      scrollTo = this.browseComp.ToppicksElement.nativeElement;
+    else if (elName === 'mov')
+      scrollTo = this.browseComp.MoviesElement.nativeElement;
+    else if (elName === 'pop')
+      scrollTo = this.browseComp.PoppularElement.nativeElement;
+    else if (elName === 'list') {
+      scrollTo = this.browseComp.ListElement.nativeElement;
+    }
+    scrollTo.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  toRickRoll() {
+    let videoUrl = '';
+    this.route.params.subscribe((params) => {
+      videoUrl = `https://www.youtube.com/embed/dQw4w9WgXcQ`;
+    });
+  }
+
+  openVideo() {
+    window.open(`https://www.youtube.com/watch?v=dQw4w9WgXcQ`, '_self');
   }
 }

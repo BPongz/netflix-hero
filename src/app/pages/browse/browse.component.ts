@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-browse',
@@ -6,10 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./browse.component.scss'],
 })
 export class BrowseComponent implements OnInit {
-  // toppicks = document.getElementsByTagName('toppicks');
-  // movies = document.getElementsByTagName('movies');
-  // poppular = document.getElementsByTagName('poppular');
-  // list = document.getElementsByTagName('list');
-
   ngOnInit(): void {}
+  @ViewChild('toTop') toTop!: ElementRef;
+  @ViewChild('toMov') toMov!: ElementRef;
+  @ViewChild('toPop') toPop!: ElementRef;
+  @ViewChild('toList') toList!: ElementRef;
+
+  public get ToppicksElement(): ElementRef {
+    return this.toTop;
+  }
+  public get MoviesElement(): ElementRef {
+    return this.toMov;
+  }
+  public get PoppularElement(): ElementRef {
+    return this.toPop;
+  }
+  public get ListElement(): ElementRef {
+    return this.toList;
+  }
 }

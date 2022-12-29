@@ -1,0 +1,17 @@
+.items,
+.service {
+    color: gray;
+    font-size: 14px;
+}
+.items:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.service:hover {
+    color: white;
+    cursor: pointer;
+}
+.copyrights {
+    color: gray;
+    font-size: 12px;
+}

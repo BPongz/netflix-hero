@@ -18,6 +18,7 @@ import { ToppicksComponent } from './pages/browse/components/toppicks/toppicks.c
 import { MoviesComponent } from './pages/browse/components/movies/movies.component';
 import { PoppularComponent } from './pages/browse/components/poppular/poppular.component';
 import { ListComponent } from './pages/browse/components/list/list.component';
+import { FooterComponent } from './components/layout/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ListComponent } from './pages/browse/components/list/list.component';
     MoviesComponent,
     PoppularComponent,
     ListComponent,
+    FooterComponent,
   ],
   imports: [
     AppRoutingModule,

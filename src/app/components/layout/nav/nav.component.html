@@ -1,6 +1,6 @@
 <div class="nav flex align-items-center justify-content-center">
   <div class="container flex w-12 align-items-center justify-content-between">
-    <div class="left flex align-items-center gap-5">
+    <div class="left flex align-items-center gap-5 select-none">
       <p-image src="../../../../assets/img/Netflix.png" height="25"></p-image>
       <div
         class="browse flex align-items-center gap-1 sm:flex md:hidden"
@@ -14,6 +14,7 @@
           class="navList select-none"
           *ngFor="let data of navList"
           [ngClass]="{ activated: data.current }"
+          (click)="scrollToElement(data.link)"
         >
           {{ data.label }}
         </div>

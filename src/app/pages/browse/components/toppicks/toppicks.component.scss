@@ -4,3 +4,16 @@
 .card {
     min-width: 15rem;
 }
+.icon {
+    color: gray;
+    &:hover {
+        color: white;
+        transition: all 0.2s ease-in-out;
+    }
+}
+.seemore {
+    color: teal;
+    transition-duration: 2s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 1s;
+}

@@ -1,11 +1,25 @@
 <div class="flex flex-column gap-3">
-  <div class="text-2xl text-white">{{ banner }}</div>
-  <div class="card-container flex align-items-center gap-2">
+  <div class="flex justify-content-between">
+    <div class="text-2xl text-white">{{ banner }}</div>
+    <i
+      class="icon pi pi-fw pi-arrow-right"
+      (click)="scroll()"
+      *ngIf="!resetShow"
+    ></i>
+    <i
+      class="icon pi pi-fw pi-arrow-left"
+      (click)="scrollTop()"
+      *ngIf="resetShow"
+    ></i>
+  </div>
+  <div class="card-container flex align-items-center gap-2 scroll2" #scrollable>
     <div
       *ngFor="let data of topList"
-      class="card h-8rem bg-gray-700 text-white flex align-items-center justify-content-center border-round"
-    >
-      {{ data.label }}
-    </div>
+      class="card h-8rem bg-gray-700 text-white flex align-items-center justify-content-center border-round overflow-hidden"
+      [ngStyle]="{
+        'background-image': 'url(' + data.path + ')',
+        'background-size': 'cover'
+      }"
+    ></div>
   </div>
 </div>

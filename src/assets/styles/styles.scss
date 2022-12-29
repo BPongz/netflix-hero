@@ -7,3 +7,16 @@ body {
 .container {
     max-width: 90vw !important  ;
 }
+
+.footer-container {
+    max-width: 75vw !important;
+}
+
+.scroll2::-webkit-scrollbar {
+    height: 5px;
+}
+
+.scroll2::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 10px;
+}

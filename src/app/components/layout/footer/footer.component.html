@@ -1,0 +1,20 @@
+<div class="mb-2 flex flex-column gap-3 select-none">
+  <div class="flex gap-3">
+    <i class="pi pi-fw pi-facebook text-white text-xl"></i>
+    <i class="pi pi-fw pi-instagram text-white text-xl"></i>
+    <i class="pi pi-fw pi-twitter text-white text-xl"></i>
+    <i class="pi pi-fw pi-youtube text-white text-xl"></i>
+  </div>
+  <div class="grid">
+    <div
+      *ngFor="let data of footerList"
+      class="items sm:col-3 col-6 font-light"
+    >
+      {{ data.label }}
+    </div>
+  </div>
+  <div class="service">
+    <div class="border-1 w-7rem border-white text-center p-2">Service Code</div>
+  </div>
+  <div class="copyrights font-light">© 1997-2022 Netflix, Inc.</div>
+</div>

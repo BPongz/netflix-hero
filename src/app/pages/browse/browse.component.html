@@ -1,5 +1,5 @@
 <app-nav></app-nav>
-<div class="flex flex-column align-items-center gap-3 mb-3">
+<div class="flex flex-column align-items-center gap-5 mb-4 select-none">
   <div
     class="promo flex justify-content-center align-items-center w-12 md:h-30rem sm:h-30rem h-20rem"
   >
@@ -7,16 +7,21 @@
       <app-movie></app-movie>
     </div>
   </div>
-  <div class="container w-12">
+  <div class="container w-12" #toTop>
     <toppicks banner="Top Picks for You"></toppicks>
   </div>
-  <div class="container w-12">
+  <div class="container w-12" #toMov>
     <movies banner="Western Movies"></movies>
   </div>
-  <div class="container w-12">
+  <div class="container w-12" #toPop>
     <poppular banner="New Releases"></poppular>
   </div>
-  <div class="container w-12">
+  <div class="container w-12" #toList>
     <list banner="My List"></list>
+  </div>
+</div>
+<div class="flex justify-content-center">
+  <div class="footer-container w-12">
+    <app-footer></app-footer>
   </div>
 </div>
